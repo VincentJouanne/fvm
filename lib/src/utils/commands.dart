@@ -15,8 +15,14 @@ Future<int> flutterCmd(
   CacheVersion version,
   List<String> args,
 ) async {
+  print('Platform environment PATH BEFORE: ${Platform.environment['PATH']}');
   // Update environment variables
   final environment = updateFlutterEnvVariables(version.binPath);
+  print('CacheVersion: $version');
+  print('CacheVersion Bin Path: ${version.binPath}');
+  print('Platform environment PATH AFTER: ${Platform.environment['PATH']}');
+  print('Environment PATH AFTER: ${environment['PATH']}');
+
   // Run command
   return await _runCmd(
     version.flutterExec,
