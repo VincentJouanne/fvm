@@ -103,6 +103,8 @@ Map<String, String> _updateEnvVariables(
   final envMap = env ?? kEnvVars;
   final envPath = envMap['PATH'] ?? '';
 
+  print('envPath: $envPath');
+
   /// Remove exec path that does not match
   final pathEnvList = envPath
       .split(':')
